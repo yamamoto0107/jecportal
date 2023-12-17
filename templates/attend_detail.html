@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block content %}
+    <p>{{ attend.number | add_class:'form-control' }}</p>
+    <p>{{ attend.name }}</p>
+    <p>{{ attend.email }}</p>
+    <a href="{% url 'portal:attend_list' %}">戻る</a>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>日本工科大学校AI工学部最終課題</h1>
+<h2>学生向けポータルサイト</h2>
+<p>ようこそ　{{ name }} {{ pass }}</p>
+<form action="{% url 'portal:index' %}" method="post">
+    {% csrf_token %}
+    <div>
+        <label for="name">学籍番号</label>
+        <input type="text" id="name" name="name">
+    </div>
+    <div>
+        <label for="pass">パスワード</label>
+        <input type="password" id="pass" name="pass">
+    </div>
+    <input type="submit" value="ログイン">
+</form>
+
+<a href="{% url 'portal:attend_create' %}">学生登録</a>
+<a href="{% url 'portal:attend_list' %}">学生一覧</a>
+{% endblock %}

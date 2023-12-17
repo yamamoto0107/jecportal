@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+{% for attend in attend_list %}
+<li>
+    {{ attend.number }}
+    <a href="{% url 'portal:attend_detail' attend.pk %}">{{ attend.name }}</a>
+</li>
+<a href="{% url 'portal:index' %}">戻る</a>
+{% endfor %}
+{% endblock %}
